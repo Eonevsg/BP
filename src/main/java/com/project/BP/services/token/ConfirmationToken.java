@@ -3,7 +3,6 @@ package com.project.BP.services.token;
 import com.project.BP.entities.AppUser;
 import org.springframework.data.annotation.Id;
 
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 
@@ -11,7 +10,6 @@ public class ConfirmationToken {
 
     @Id
     private String id;
-    @NotNull
     private String token;
     private LocalDateTime localDateTime;
     private LocalDateTime expiresAt;
@@ -22,7 +20,7 @@ public class ConfirmationToken {
     public ConfirmationToken() {
     }
 
-    public ConfirmationToken(String token, LocalDateTime localDateTime, LocalDateTime expiredAt,  AppUser appUser) {
+    public ConfirmationToken(String token, LocalDateTime localDateTime, LocalDateTime expiredAt, AppUser appUser) {
         this.token = token;
         this.localDateTime = localDateTime;
         this.expiresAt = expiredAt;
